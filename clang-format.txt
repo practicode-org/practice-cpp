@@ -1,0 +1,8 @@
+﻿---
+BasedOnStyle: Chromium
+ColumnLimit: '120'
+Language: Cpp
+Standard: Cpp11
+UseTab: Never
+
+...
