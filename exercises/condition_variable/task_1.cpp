@@ -3,50 +3,51 @@ C++ concurrency: condition_variable
 
 Task:
 - Rewrite how data is passed between threads. Use condition_variable.
-- Add an exit condition. When a producer thread finished its work, wait around 1ms and send exit signal to the consumer thread.
+- Add an exit condition. When a producer thread finished its work, wait around 1ms and send exit signal to the consumer
+thread.
 
 Self-check:
 - `condition_variable` is used.
 - Task-receiver is not busy all the time in a loop, but go to sleep when there are no tasks.
 - `tsan` shows no errors.
 */
-#include <iostream>
 #include <chrono>
-#include <thread>
+#include <iostream>
 #include <mutex>
 #include <queue>
+#include <thread>
 
 std::mutex mtx;
 std::queue<int> queue;
 
 void do_task(int task) {
-    std::string s = "task " + std::to_string(task) + " completed";
-    std::cout << s << std::endl;
+  std::string s = "task " + std::to_string(task) + " completed";
+  std::cout << s << std::endl;
 }
 
 void task_producer_func() {
-    for (int i = 0; i < 16; i++) {
-        std::this_thread::sleep_for(std::chrono::microseconds(rand() % 100));
-        std::unique_lock l(mtx);
-        queue.push(i + 1);
-    }
+  for (int i = 0; i < 16; i++) {
+    std::this_thread::sleep_for(std::chrono::microseconds(rand() % 100));
+    std::unique_lock l(mtx);
+    queue.push(i + 1);
+  }
 }
 
 void task_receiver_func() {
+  while (true) {
+    // get a task
+    int task = 0;
     while (true) {
-        // get a task
-        int task = 0;
-        while (true) {
-            std::unique_lock l(mtx);
-            if (!queue.empty()) {
-                task = queue.front();
-                queue.pop();
-                break;
-            }
-        }
-
-        do_task(task);
+      std::unique_lock l(mtx);
+      if (!queue.empty()) {
+        task = queue.front();
+        queue.pop();
+        break;
+      }
     }
+
+    do_task(task);
+  }
 }
 
 int main() {
