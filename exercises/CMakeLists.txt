@@ -22,6 +22,8 @@ add_executable(sorting_1 sorting/task_1.cpp)
 
 add_executable(sorting_2 sorting/task_2.cpp)
 
+add_executable(sorting_3 sorting/task_3.cpp)
+
 # Dependencies setup
 set(TARGETS
       condition_variable_1
@@ -29,7 +31,9 @@ set(TARGETS
       condition_variable_3
       condition_variable_4
       sorting_1
-      sorting_2)
+      sorting_2
+      sorting_3
+)
 
 foreach(TARGET ${TARGETS})
   target_link_libraries(${TARGET} PUBLIC gtest)
