@@ -1,6 +1,11 @@
 cmake_minimum_required(VERSION 3.19)
 project(practicode-cpp)
 
+# Test framework
+set(BUILD_GMOCK OFF)
+add_subdirectory(thirdparty/googletest)
+
+# Concurrency, condition_variable
 add_executable(condition_variable_1 condition_variable/task_1.cpp)
 
 add_executable(condition_variable_2 condition_variable/task_2.cpp)
@@ -9,9 +14,26 @@ add_executable(condition_variable_3 condition_variable/task_3.cpp)
 
 add_executable(condition_variable_4 condition_variable/task_4.cpp)
 
+# Algorithms, sorting
+add_executable(sorting_1 sorting/task_1.cpp)
+
+add_executable(sorting_2 sorting/task_2.cpp)
+
+# Dependencies setup
+set(TARGETS
+      condition_variable_1
+      condition_variable_2
+      condition_variable_3
+      condition_variable_4
+      sorting_1
+      sorting_2)
+
+foreach(TARGET ${TARGETS})
+  target_link_libraries(${TARGET} PUBLIC gtest)
+endforeach()
+
 if(UNIX)
-  target_link_libraries(condition_variable_1 PUBLIC pthread)
-  target_link_libraries(condition_variable_2 PUBLIC pthread)
-  target_link_libraries(condition_variable_3 PUBLIC pthread)
-  target_link_libraries(condition_variable_4 PUBLIC pthread)
+  foreach(TARGET ${TARGETS})
+    target_link_libraries(${TARGET} PUBLIC pthread)
+  endforeach()
 endif()
