@@ -19,7 +19,7 @@ using testing::ElementsAre;
 
 TEST(Sort, ByLength) {
   std::vector<std::string> arr = {"a", "eleven", "seven__", "one", "eight___", "three", "four"};
-  std::sort(arr.begin(), arr.end()/*, comparator*/);  // <- use std::sort, but with a custom comparator
+  std::sort(arr.begin(), arr.end() /*, comparator*/);  // <- use std::sort, but with a custom comparator
   EXPECT_THAT(arr, ElementsAre("a", "one", "four", "three", "eleven", "seven__", "eight___"));
 
   arr = {"3333333", "55555", "777", "9", "88", "6666", "444444"};
