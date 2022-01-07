@@ -24,6 +24,9 @@ add_executable(sorting_2 sorting/task_2.cpp)
 
 add_executable(sorting_3 sorting/task_3.cpp)
 
+# Chrono library
+add_executable(chrono_1 chrono/task_1.cpp)
+
 # Dependencies setup
 set(TARGETS
       condition_variable_1
@@ -33,6 +36,7 @@ set(TARGETS
       sorting_1
       sorting_2
       sorting_3
+      chrono_1
 )
 
 foreach(TARGET ${TARGETS})
