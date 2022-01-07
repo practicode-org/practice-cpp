@@ -1,7 +1,7 @@
 # Practice C++
 Practice middle/senior C++ by solving well-prepared exercises.
 
-C++ compiler: any C++14 compliant.
+C++ compiler: any C++17 compliant.
 
 Build system: CMake 3.19+.
 
