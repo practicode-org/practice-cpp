@@ -19,7 +19,7 @@ class Queue {
  private:
   // underlying data type
   std::queue<T> storage;
-}
+};
 
 int main() {
   return 0;

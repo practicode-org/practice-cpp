@@ -12,6 +12,7 @@ Self-check:
 #include <mutex>
 #include <queue>
 #include <thread>
+#include <atomic>
 
 std::atomic_bool resume;
 
