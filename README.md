@@ -18,5 +18,19 @@ cmake --build build
 ```
 Now open any .cpp task you'd like to start with, tinker with it, recompile with `cmake --build build`, try and repeat, until it's done.
 
+## How to use it
+1. Before starting, make sure you:
+- understand the task description, constrains and examples
+- compile the program (unless the task is to fix compilation) and run it
+- see that the current program, output or behavior is not correct
+- understand what behavior is expected and how you would check for correctness
+- write some unit tests (if applicable)
+
+2. You can use StackOverflow, but understand what you copy. And next time you have the same subtask, try to recall and write by yourself.
+
+3. There's no sense in cheating: there is no competition (except with yourself) and there are no prizes.
+
+4. If you need help, you can ask for it in the [public tlk chat](https://tlk.io/practicode-cpp) (altough it may feel deserted).
+
 ## Contribution
 Contribution is appreciated, please, read the [guide](CONTRIBUTING.md).
