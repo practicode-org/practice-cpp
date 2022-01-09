@@ -1,6 +1,9 @@
 /*
 Task:
 1) print elements of different containers in ascending order. You may change them by calling `sort` if needed.
+
+plus: change to descending order
+
 */
 #include <deque>
 #include <list>
@@ -10,7 +13,7 @@ Task:
 #include "gtest/gtest.h"
 
 TEST(AscendingOrder, Vector) {
-  // Note: this one is already done
+  // Note: this task is already done
   std::vector<int> arr = {6, 5, 4, 1, 3, 2};
 
   std::sort(std::begin(arr), std::end(arr));
@@ -21,7 +24,7 @@ TEST(AscendingOrder, Vector) {
     std::cout << item << " ";
   }
 
-  EXPECT_EQ(testing::internal::GetCapturedStdout(), "1 2 3 4 5 6 ");
+  EXPECT_EQ(testing::internal::GetCapturedStdout(), "1 2 3 4 5 6 "); // Note: the last whitespace is just for convenience
 }
 
 TEST(AscendingOrder, CArray) {

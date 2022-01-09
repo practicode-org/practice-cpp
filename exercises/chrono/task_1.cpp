@@ -4,7 +4,7 @@ Task:
 90-th percentile duration.
 - print it in microseconds and nanoseconds.
 
-plus: print in floating point number of seconds and milliseconds.
+plus: print floating point number of seconds and milliseconds.
 */
 #include <chrono>
 #include <iostream>
