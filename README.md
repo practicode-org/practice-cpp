@@ -7,6 +7,13 @@ Build system: CMake 3.19+.
 
 OS: Tested on `Manjaro Linux x86_64`, support for other platforms is desired.
 
+## Topics
+| Directory | Description   |
+| --------- | ------------- |
+| sorting               | Different ordering algorithms in STL, sorting efficiently |
+| chrono                | std::chrono library, clocks, duration measuring |
+| condition_variable    | A practical thread synchronization primitive and concurrency patterns with it |
+
 ## Getting started
 ```
 git clone https://github.com/practicode-org/practice-cpp
