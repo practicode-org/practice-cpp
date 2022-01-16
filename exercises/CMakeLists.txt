@@ -26,6 +26,8 @@ add_executable(sorting_3 sorting/task_3.cpp)
 
 add_executable(sorting_4 sorting/task_4.cpp)
 
+add_executable(sorting_5 sorting/task_5.cpp)
+
 # Chrono library
 add_executable(chrono_1 chrono/task_1.cpp)
 
@@ -39,11 +41,12 @@ set(TARGETS
       sorting_2
       sorting_3
       sorting_4
+      sorting_5
       chrono_1
 )
 
 foreach(TARGET ${TARGETS})
-  target_link_libraries(${TARGET} PUBLIC gtest)
+  target_link_libraries(${TARGET} PUBLIC gtest gmock)
 endforeach()
 
 if(UNIX)

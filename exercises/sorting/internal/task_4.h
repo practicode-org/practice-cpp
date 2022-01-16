@@ -1,5 +1,6 @@
 #pragma once
-#include <cctype>  // tolower
+#include <algorithm>  // find
+#include <cctype>     // tolower
 #include <chrono>
 #include <cmath>    // fabs
 #include <ctime>    // strftime
@@ -18,7 +19,6 @@ using time_point = std::chrono::system_clock::time_point;
 
 enum class Rating { Sell, Underperform, Hold, Outperform, Buy };
 
-
 struct Company {
   std::string name;
   time_point creation_date;
@@ -27,6 +27,10 @@ struct Company {
   uint64_t capitalization;
 };
 
+bool operator==(const Company& a, const Company& b) {
+  return a.name == b.name && a.creation_date == b.creation_date && a.dividends == b.dividends && a.rating == b.rating &&
+         a.capitalization == b.capitalization;
+}
 
 std::ostream& operator<<(std::ostream& os, time_point t) {
   std::time_t tp = std::chrono::system_clock::to_time_t(t);
@@ -40,10 +44,8 @@ std::ostream& operator<<(std::ostream& os, const Company& c) {
   static const char* rating_to_str[] = {
       "Sell", "Underperform", "Hold", "Outperform", "Buy",
   };
-  os << "{" << std::setw(28) << std::left << c.name << " created " << c.creation_date << ", ";
-  if (c.dividends) {
-    os << "dividends, ";
-  }
+  os << "{" << std::setw(24) << std::left << c.name << " created " << c.creation_date << ", ";
+  os << "dividends: " << (c.dividends ? '+' : '-') << ", ";
   os << "rating: " << std::setw(12) << std::left << rating_to_str[(int)c.rating] << ", ";
   os << "cap $" << c.capitalization << "}";
   return os;
@@ -95,8 +97,8 @@ std::string generateName() {
                                "Station",    "Traders",    "Options",    "Brother", "Jets",      "Axis",
                                "Innovation", "Scape",      "Realm",      "Rover",   "Post",      "Depot",
                                "Alliance",   "Play"};
-  static const char* postfix[] = {"Tech",  "Lab",      "Team",    "Soft",    "Shop", "Platform", "Inc",       "Corp",
-                                  "Group", "Holdings", "Systems", "Academy", "Cafe", "Agency",   "Consulting"};
+  static const char* postfix[] = {"Tech", "Lab",   "Team",    "Soft",    "Shop",    "Platform", "Inc",
+                                  "Corp", "Group", "Holding", "Systems", "Academy", "Cafe",     "Agency"};
 
   std::string result;
 
@@ -135,4 +137,24 @@ std::vector<Company> generateRandomCompanies(int N) {
   }
 
   return result;
+}
+
+// for stable sort
+void checkOrderPreserved(const std::vector<Company>& v1, const std::vector<Company>& v2) {
+  for (auto i = 1u; i < v2.size(); i++) {
+    const auto& a = v2[i - 1];
+    const auto& b = v2[i];
+
+    if (!(a.rating < b.rating) && !(b.rating < a.rating)) {
+      // two adjacent companies are equivalent
+      // check thier order in the first array
+      if (std::find(v1.begin(), v1.end(), a) >
+          std::find(v1.begin(), v1.end(),
+                    b)) {  // yes, it's O(N^2), but it doesn't matter much in an educational application
+        std::cerr << "\nError: Order was not preserved for equivalent items \"" << a.name << "\" and \"" << b.name
+                  << "\" (compared by rating)." << std::endl;
+        return;
+      }
+    }
+  }
 }

@@ -19,6 +19,7 @@ Would be sorted as such:
 
 plus: sort in reverse direction
 plus: add one more order criteria
+plus: try `stable_sort` and examine its guarantees
 */
 #include "internal/task_4.h"
 #include <algorithm>
