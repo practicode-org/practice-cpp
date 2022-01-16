@@ -28,9 +28,18 @@ Now open any .cpp task you'd like to start with, tinker with it, recompile with 
 
 2. You can use StackOverflow, but understand what you copy. And next time you have the same subtask, try to recall and write by yourself.
 
-3. There's no sense in cheating: there is no competition (except with yourself) and there are no prizes.
+3. How to check if you are correct:
+- code compiles
+- you ran it multiple times with a predictable, stable, successful result
+- tests pass, no sign of errors in the output
+- you can verify results, and they match your expectations
+- watch for "self-check" sections in exercises' descriptions
+- optional: sanitizers show no errors
+- ask somebody for a code review if you are still unsure
 
-4. If you need help, you can ask for it in the [public tlk chat](https://tlk.io/practicode-cpp) (altough it may feel deserted).
+4. There's no sense in cheating: there is no competition (except with yourself) and there are no prizes.
+
+5. If you need help, you can ask for it in the [public tlk chat](https://tlk.io/practicode-cpp) (altough it may feel deserted).
 
 ## Contribution
 Contribution is appreciated, please, read the [guide](CONTRIBUTING.md).
