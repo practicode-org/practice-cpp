@@ -7,12 +7,15 @@ Build system: CMake 3.19+.
 
 OS: Tested on `Manjaro Linux x86_64`, support for other platforms is desired.
 
+
 ## Topics
 | Directory | Description   |
 | --------- | ------------- |
 | sorting               | Different ordering algorithms in STL, sorting efficiently |
 | chrono                | std::chrono library, clocks, duration measuring |
 | condition_variable    | A practical thread synchronization primitive and concurrency patterns with it |
+| template              | Templates and template meta-programming |
+
 
 ## Getting started
 ```
@@ -24,6 +27,7 @@ cmake -Bbuild .
 cmake --build build
 ```
 Now open any .cpp task you'd like to start with, tinker with it, recompile with `cmake --build build`, try and repeat, until it's done.
+
 
 ## How to use it
 1. Before starting, make sure you:
@@ -47,6 +51,7 @@ Now open any .cpp task you'd like to start with, tinker with it, recompile with 
 4. There's no sense in cheating: there is no competition (except with yourself) and there are no prizes.
 
 5. If you need help, you can ask for it in the [public tlk chat](https://tlk.io/practicode-cpp) (altough it may feel deserted).
+
 
 ## Contribution
 Contribution is appreciated, please, read the [guide](CONTRIBUTING.md).
