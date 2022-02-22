@@ -15,6 +15,7 @@ OS: Tested on `Manjaro Linux x86_64`, support for other platforms is desired.
 | chrono                | std::chrono library, clocks, duration measuring |
 | condition_variable    | A practical thread synchronization primitive and concurrency patterns with it |
 | template              | Templates and template meta-programming |
+| compilation           | Invoking a compiler and linker manually, understanding the compilation process |
 
 
 ## Getting started
