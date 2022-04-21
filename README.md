@@ -16,6 +16,7 @@ OS: Tested on `Manjaro Linux x86_64`, support for other platforms is desired.
 | condition_variable    | A practical thread synchronization primitive and concurrency patterns with it |
 | template              | Templates and template meta-programming |
 | compilation           | Invoking a compiler and linker manually, understanding the compilation process |
+| cpp20_concurrency     | Coming soon: latches, barriers, semaphores, atomic update |
 
 
 ## Getting started
