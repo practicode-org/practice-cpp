@@ -6,15 +6,19 @@ Task:
 #include <iostream>
 #include <mutex>
 #include <queue>
+#include "gtest/gtest.h"
 
 template <typename T>
 class Queue {
  public:
-  Queue(int max_queue_len) {}
+  Queue(int max_queue_len) {
+  }
 
-  void enqueue(const T& value) {}
+  void enqueue(const T& value) {
+  }
 
-  T pop() {}
+  T pop() {
+  }
 
  private:
   // underlying data type

@@ -13,6 +13,7 @@ plus: print floating point number of seconds and milliseconds.
 using namespace std::chrono_literals;
 
 void func() {
+  // do not change body of the function
   std::this_thread::sleep_for(0.5ms);
 }
 
