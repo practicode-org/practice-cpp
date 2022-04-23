@@ -28,6 +28,8 @@ add_executable(sorting_4 sorting/task_4.cpp)
 
 add_executable(sorting_5 sorting/task_5.cpp)
 
+add_executable(sorting_6 sorting/task_6.cpp)
+
 # Chrono library
 add_executable(chrono_1 chrono/task_1.cpp)
 
@@ -45,6 +47,7 @@ set(TARGETS
       sorting_3
       sorting_4
       sorting_5
+      sorting_6
       chrono_1
       template_1
 )
