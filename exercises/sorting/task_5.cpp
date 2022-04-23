@@ -1,7 +1,7 @@
 /*
 Task:
-1) Partition the array of companies by 'dividends' criteria. Companies with dividends should precede companies that do
-not pay dividends. Example: {SolidOptions     created Nov 1999, dividends: +, rating: Sell,         cap $5042001}
+1) Partition the array of companies by 'dividends' criteria. Companies with dividends should precede companies that do not pay dividends. Example:
+{SolidOptions     created Nov 1999, dividends: +, rating: Sell,         cap $5042001}
 {TotalPlay        created Jun 1980, dividends: -, rating: Underperform, cap $961052}
 {TechnoVision     created May 2018, dividends: -, rating: Outperform  , cap $6535232
 {AutoScale        created Dec 1970, dividends: +, rating: Underperform, cap $11066993}
@@ -12,25 +12,25 @@ Partitioned:
 {TotalPlay        created Jun 1980, dividends: -, rating: Underperform, cap $961052}
 {TechnoVision     created May 2018, dividends: -, rating: Outperform  , cap $6535232}
 
-Try use approach with std::sort and then try more efficient std::partition. Compare number of move operations.
+Try use approach with std::sort and then try more efficient std::partition. Compare number of operations.
 
 Self-check:
 - std::partition used.
 - tests don't fail (output is empty).
 
-Plus: implement your own algorithm (without using STL).
+plus: implement your own algorithm (without using STL).
 
 
 2) Perform a partial sort (by descending capitalization): rearrange items such that first N of the result array contains
 the largest companies (sorted) by capitalization. The order of the remaining elements is unspecified. Example with
-numbers: Initial array: {8 6 2 5 7 2 3 9 1} Partially sorted (descending order) with N = 4: {9 8 7 6 2 2 3 5 1}. Note
+numbers: Initial array: {8 6 2 5 7 2 3 9 1}, partially sorted (descending order) with N = 4: {9 8 7 6 2 2 3 5 1}. Note
 that the resulting array is a permutation of the initial array.
 
 Self-check:
 - std::partial_sort used.
 - tests don't fail (output is empty).
 
-Plus: study and try partial sort **copy** algorithm.
+plus: study and try partial sort **copy** algorithm.
 */
 #include <algorithm>
 #include <iostream>

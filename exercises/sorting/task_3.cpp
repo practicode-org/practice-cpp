@@ -3,7 +3,6 @@ Task:
 1) print elements of different containers in ascending order. You may change them by calling `sort` if needed.
 
 plus: change to descending order
-
 */
 #include <deque>
 #include <list>
@@ -30,7 +29,7 @@ TEST(AscendingOrder, Vector) {
 TEST(AscendingOrder, CArray) {
   int arr[] = {6, 5, 4, 1, 3, 2};
 
-  // TODO: sorting
+  // ...
 
   testing::internal::CaptureStdout();
 

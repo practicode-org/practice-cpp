@@ -2,6 +2,7 @@
 This program prints companies on a stock market.
 Task:
 - sort companies with three criterias: `dividends` first, then `rating`, then `capitalization`.
+  This means that companies are compared by `dividends`, but if these fields are equal then the next field is used for comparison.
 
 For example, these companies:
 {DailyMarket              created Jan 1975, dividends, rating: Hold        , cap $15568997}
@@ -17,6 +18,7 @@ Would be sorted as such:
 {FrontTravel              created Dec 1978, dividends, rating: Hold        , cap $631681}
 {TeleBank Tech            created Aug 2003           , rating: Buy         , cap $17549087}
 
+plus: check by using std::is_sorted
 plus: sort in reverse direction
 plus: add one more order criteria
 plus: try `stable_sort` and examine its guarantees

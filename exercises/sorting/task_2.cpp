@@ -1,6 +1,7 @@
 /*
 Task 1:
 - sort strings by their length, not lexicographically.
+
 Task 2:
 - sort integers by number of '1' bits in their binary representation.
   example: {3, 7, 8} -> {8, 3, 7}, because 8 is 0b1000, 3 is 0x11, 7 id 0x111.

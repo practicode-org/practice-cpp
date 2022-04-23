@@ -6,6 +6,8 @@ Task:
 plus: add your own tests.
 plus: you have a STL-based implementation and a manual variant.
 plus: support for a reverse-sorted sequences too.
+plus: write a template based variant that may work with vector of different types
+plus: write a function that accepts two input iterators (begin, end)
 */
 #include <iostream>
 #include <vector>
