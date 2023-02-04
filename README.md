@@ -24,7 +24,6 @@ OS: Tested on `Manjaro Linux x86_64`, support for other platforms is desired.
 git clone https://github.com/practicode-org/practice-cpp
 cd practice-cpp
 git submodule update --recursive --init
-cd exercises
 cmake -Bbuild .
 cmake --build build
 ```
