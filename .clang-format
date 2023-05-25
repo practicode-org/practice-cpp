@@ -4,5 +4,7 @@ ColumnLimit: 120
 Language: Cpp
 Standard: Cpp11
 UseTab: Never
-
+IndentWidth: 4
+IndentAccessModifiers: false
+AccessModifierOffset: -4
 ...
